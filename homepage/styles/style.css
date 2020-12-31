@@ -1,0 +1,53 @@
+@import "fonts.css";
+@import "header.css";
+@import "projectCards.css";
+@import "footer.css";
+@import "mediaqueries.css";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+a,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+/* Animations... */
+@keyframes js30Anime {
+  from {
+    transform: translate(0, 0) rotateY(20deg);
+    text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.15);
+  }
+  65% {
+    transform: translate(0, 10px) rotateX(10deg) rotateY(10deg);
+    text-shadow: -10px -10px 3px rgba(0, 0, 0, 0.15);
+  }
+  to {
+    transform: translate(0, 0) rotateY(20deg);
+    text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.15);
+  }
+}
+
+header {
+  color: #7ed56fd5;
+  color:#28b485cc
+}

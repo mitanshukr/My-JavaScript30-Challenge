@@ -1,0 +1,77 @@
+/* header... */
+header {
+  height: 50rem;
+  background: #241e49
+    url(https://s3.amazonaws.com/js30-cdn/sky--purple-kracked.jpg) center center
+    no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.js30 {
+  font-size: 15rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-family: "againtsregular";
+  color: white;
+  margin: 0;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
+  animation: js30Anime 8s ease-in-out infinite;
+  perspective: 500px;
+}
+
+.js30::before {
+  z-index: -1;
+  content: "_";
+  position: absolute;
+  color: black;
+  left: 0;
+  transform: translate(28%, -200%);
+  font-size: 55rem;
+  line-height: 20px;
+}
+
+.js30 .js30__hashtag {
+  color: #ffc600;
+  font-size: 0.5em;
+}
+.js30 .js30__30 {
+  color: #ffc600;
+  font-size: 1.5em;
+  position: relative;
+  top: 0.07em;
+}
+
+.js30__welcome {
+  font-family: "adam.cg_proregular";
+  font-size: 2.5rem;
+  color: white;
+  padding: 0 1rem;
+}
+
+.js30__welcome span {
+  color: #ffc600;
+}
+
+.messageBox {
+  background-color: white;
+  padding: 2rem;
+  width: 80vw;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  border: 8px solid rgba(122, 122, 122, 0.2);
+}
+
+.messageBox p {
+  font-size: 1.7rem;
+  text-align: center;
+  padding: 0 5rem;
+  line-height: 1.3;
+}
+
+.copyright {
+  color: white;
+  font-size: 1rem;
+}

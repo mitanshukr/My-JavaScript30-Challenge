@@ -1,0 +1,38 @@
+/* footer and related styles... */
+footer {
+  height: 25rem;
+  background-color: rgba(167, 43, 250, 0.726);
+  margin-top: 5rem;
+  font-size: 2rem;
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h4 > a {
+  color: yellow !important;
+}
+
+footer h4 > a:hover {
+  border-bottom: 3px solid rgb(19, 19, 19);
+  cursor: pointer;
+  color: rgba(255, 0, 128, 0.952) !important;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2.5rem;
+}
+
+.social p {
+  flex: 1 1 100%;
+  font-weight: bold;
+}
+.social i {
+  font-size: 3rem;
+  padding: 1.2rem;
+}

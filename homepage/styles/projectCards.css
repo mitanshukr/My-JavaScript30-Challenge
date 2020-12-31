@@ -1,0 +1,174 @@
+/* project cards... */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5rem;
+  justify-content: center;
+}
+
+.project {
+  flex: 0 0 35rem;
+  height: 50rem;
+  margin: 12px;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  background-color: rgba(20, 20, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* .project:not(:nth-child(3n)) {
+    margin-right: 30px;
+  } */
+
+.project__side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  backface-visibility: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 0.8s ease;
+}
+
+.project__side.front {
+  background-color: white;
+  font-size: 20px;
+}
+
+.project__side.back {
+  transform: rotateY(180deg);
+  /* background: linear-gradient(
+      to right bottom,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 255, 0, 0.8)
+    ); */
+}
+
+.project:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.project:hover .back {
+  transform: rotateY(0);
+}
+
+.project__screenshot {
+  height: 20rem;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  background-blend-mode: screen;
+}
+
+/* .project__screenshot.proj1 {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 0, 0, 0.8),
+        rgba(255, 255, 0, 0.8)
+      ),
+      url(index_images/proj1.png);
+  } */
+
+.project__heading {
+  /* Project Day */
+  font-family: "adam.cg_proregular";
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: absolute;
+  top: 15.5rem;
+  right: 0.5rem;
+  color: white;
+}
+
+.project__day {
+  padding: 1rem 1.5rem;
+}
+
+/* .project__day.day1 {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 255, 0, 0.8)
+    );
+  } */
+
+.project__details {
+  margin: 0 2rem;
+}
+
+.project__name {
+  font-family: "adam.cg_proregular";
+  font-size: 2.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 3rem 0 1rem;
+}
+
+.improved {
+  color: red;
+}
+
+small.improved {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.project__description {
+  font-size: 1.6rem;
+}
+
+.project__features {
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #707070;
+}
+
+.project__features li {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.project__features li:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.project__links {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+}
+
+.project__links .btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 10rem;
+  color: white;
+  font-size: 1.5rem;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.project__links .btn:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.project__links .btn:first-child {
+  margin-bottom: 3rem;
+}
