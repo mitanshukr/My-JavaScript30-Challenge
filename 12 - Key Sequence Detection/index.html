@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <style>
+      h1 {
+        background-color: yellow;
+        display: inline;
+        padding: 8px;
+        font-size: 20px;
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      span {
+        background-color: purple;
+        color: blanchedalmond;
+        padding: 3px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1>Type <span>mitanshu</span> to see the Magic.</h1>
+    <script>
+      const secretCode = "mitanshu";
+      const pressedKeys = [];
+
+      document.addEventListener("keyup", (e) => {
+        pressedKeys.push(e.key);
+        pressedKeys.splice(
+          -secretCode.length - 1,
+          pressedKeys.length - secretCode.length
+        );
+        //array.splice(-veNumber, +veNumber);   //works.
+        //array.splice(-ve, -ve);   //does not work.
+
+        if (pressedKeys.join("").includes(secretCode)) {
+          console.log("Ta-daaaa!!! Magic!");
+          cornify_add(); //check: https://www.cornify.com/js/cornify.js
+        }
+        //console.log(pressedKeys);
+      });
+    </script>
+  </body>
+</html>
