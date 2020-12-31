@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mouse Shadow</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 contenteditable>💖LOVE</h1>
+    </div>
+
+    <style>
+      html {
+        color: black;
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+      }
+
+      h1 {
+        text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+        font-size: 100px;
+        /* transform: all 2s; */
+      }
+    </style>
+
+    <script>
+      const hero = document.querySelector(".hero");
+      const text = document.querySelector("h1");
+
+      const { offsetWidth: windowWidth, offsetHeight: windowHeight } = hero;
+
+      function shadowEffect(cursorX, cursorY, walk = 200) {
+        //console.log(cursorX, cursorY);
+        const xWalk = Math.round((cursorX / windowWidth) * walk - walk / 2);
+        const yWalk = Math.round((cursorY / windowHeight) * walk - walk / 2);
+
+        text.style.textShadow = `
+      ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
+      ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
+      ${yWalk}px ${xWalk * -1}px 0 rgba(0,255,0,0.7),
+      ${yWalk * -1}px ${xWalk}px 0 rgba(0,0,255,0.7)
+    `;
+      }
+
+      function functionCall(e) {
+        //clearInterval(shadowAnimation);
+        let { offsetX: cursorX, offsetY: cursorY } = e;
+
+        if (e.target.matches("h1")) {
+          cursorX += e.target.offsetLeft; //Do you know the diff. b/w offsetWidth vs offsetLeft?
+          cursorY += e.target.offsetTop; // Similarly, offsetHeight vs offsetTop?
+        }
+        shadowEffect(cursorX, cursorY);
+      }
+
+      // function randomInteger(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1) + min);
+      // }
+
+      let rad = 0; //angle in Radian
+      let shadowAnimation = setInterval(() => {
+        const AnimationWalk = 15; //Increase walk value to spread the shadow.
+        const cursorX = Math.floor(Math.cos(rad) * 100);
+        const cursorY = Math.floor(Math.sin(rad) * 100);
+        rad++;
+        // const cursorX = randomInteger(100, 800);
+        // const cursorY = randomInteger(100, 600);
+        shadowEffect(cursorX, cursorY, AnimationWalk);
+      }, 200);
+
+      hero.addEventListener("mousemove", functionCall);
+    </script>
+  </body>
+</html>

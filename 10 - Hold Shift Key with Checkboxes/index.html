@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+</head>
+
+<body>
+  <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+  -->
+  <div class="backdrop display-None">&nbsp;</div>
+
+  <div id="addItemBtn">Add Task</div>
+  <div id="addItemModal" class="display-None">
+    <h3>Add a new Task to the list</h3>
+    <input type="text" placeholder="Call to Rhexa at 4'clock"><br>
+    <input type="submit" value="Add Task">
+    <button>Close</button>
+  </div>
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything in between should also be set to checked</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Try to do it without any libraries</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Good Luck!</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Don't forget to tweet your result!</p>
+      <i class="fa fa-trash deleteIcon display-None" aria-hidden="true"></i>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

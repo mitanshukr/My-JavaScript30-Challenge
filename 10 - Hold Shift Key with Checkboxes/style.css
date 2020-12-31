@@ -1,0 +1,173 @@
+html {
+  font-family: sans-serif;
+  background: #ffc600;
+}
+
+.inbox {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked + p {
+  background: #f9f9f9;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+p {
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  flex: 1;
+  font-family: "helvetica neue";
+  font-size: 20px;
+  font-weight: 200;
+  border-left: 1px solid #d1e2ff;
+}
+
+#addItemBtn {
+  max-width: 200px;
+  margin: 50px auto;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.603);
+}
+
+#addItemBtn:hover {
+  color: purple;
+  font-weight: bold;
+  cursor: pointer;
+}
+#addItemBtn:active {
+  transform: translateY(2px);
+}
+
+#addItemModal {
+  background-color: #fff;
+  padding: 50px 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 50vw;
+  position: fixed;
+  top: 20%;
+  left: 22vw;
+  /* transform: translateX(-50%); */
+  z-index: 1000;
+  /* margin: 0 auto; */
+  animation: fade-slide-in 0.3s ease-out forwards;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
+#addItemModal input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  margin: 30px 0;
+  max-width: 450px;
+  border: 1px solid rgb(22, 22, 22);
+  border-radius: 5px;
+  outline: none;
+  background-color: rgba(236, 236, 236, 0.493);
+  font-size: 20px;
+}
+
+#addItemModal button,
+input[type="submit"] {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+#addItemModal button {
+  margin: 10px 0;
+  outline: none;
+  cursor: pointer;
+}
+
+#addItemModal button:active {
+  transform: translateY(2px);
+}
+
+.display-None {
+  display: none;
+}
+
+.deleteIcon {
+  font-size: 23px;
+  color: red;
+  float: left;
+  padding-right: 15px;
+  cursor: pointer;
+  /* transition: all 2s; */
+}
+
+.item:hover i {
+  display: block;
+}
+
+.item:hover i:hover {
+  animation: iconShake 0.2s 2 cubic-bezier(0, -0.47, 1, 1.41);
+  /* animation-iteration-count: 2; */
+}
+
+@keyframes iconShake {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+  25% {
+    transform: rotate(10deg);
+    transform-origin: center center;
+  }
+  50% {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+  75% {
+    transform: rotate(-10deg);
+    transform-origin: center center;
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+}
+
+@keyframes fade-slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

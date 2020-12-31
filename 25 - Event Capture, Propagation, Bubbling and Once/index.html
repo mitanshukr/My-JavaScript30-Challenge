@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background: thistle;
+  }
+
+  .two {
+    background: mistyrose;
+  }
+
+  .three {
+    background: coral;
+  }
+</style>
+
+<button class='btnClick'>checkout button</button>
+<script>
+  const divs = document.querySelectorAll('div');
+
+  function clickEvent(e) {
+    console.log(this.classList.value);
+    //e.stopPropagation();  //stop bubbling
+  }
+
+  divs.forEach(div => div.addEventListener('click', clickEvent, {
+    capture: true,
+    once: false,
+  }));
+
+  document.querySelector('button').addEventListener('click', clickEvent, {
+    once: true,
+  });
+</script>
+</body>
+</html>
+
+<!-- Note:
+
+  Bubbling Principle:
+    When an event happens on an element, it first runs the handler on it, then on its parent, then
+    all the way up on other ancestors. (ref: https://javascript.info/)
+  
+  In our example, the event is added to all the divs and nested divs. hence, whenever we call 
+  event on any inner div, it runs the function on it, then bubble upto all the ansectors.
+  It will run all the events if added, till it reaches to its top ansector, i.e. <html> tag.
+    
+  We can stop this bubbling by adding //e.stopPropagation();// in the called function, see above.
+
+  Also, we have an additional parameter (object) in the .addEventListner method, as you can see above.
+  The following properties can be useful in some cases:-
+    capture:  false (default), it runs the events from bottom to top.
+              true, it runs the events from top to bottom.
+    
+    once:     false (default), it runs the event as many times as triggered.
+              true, it runs the event only once, then die.
+                    As same as, if we remove any event on some element, something.removeEventListner(...);
+
+ -->
