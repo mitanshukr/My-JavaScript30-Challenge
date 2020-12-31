@@ -91,7 +91,7 @@ const project = [
   },
   {
     day: 13,
-    name: "Slide in On Scroll",
+    name: "Slide in on Scroll",
     description: "A good project to develop responsive webpages.",
     features: "JS Scroll Events,Real-Life Example,Programming Logics",
   },
@@ -263,6 +263,9 @@ for (let i = 1; i <= 30; i++) {
     .split(",")
     .map((feature) => `<li>${feature}</li>`)
     .join("");
+  
+  const githubPath = `${i < 10 ? `0${i}` : i}%20-%20${(project[i].name).split(' ').join('%20')}`;
+  //This may change anytime. Periodic checkup suggested.
 
   projectDiv.innerHTML = `
 <div class="project__side front">
@@ -282,7 +285,7 @@ for (let i = 1; i <= 30; i++) {
 <div class="project__side back back${i}">
     <div class="project__links">
         <a class="btn" href="${i < 10 ? `0${i}` : i} - ${project[i].name}/index.html" target="_blank">Live Demo</a>
-        <a class="btn" href="${i < 10 ? `0${i}` : i} - ${project[i].name}" target="_blank">Project Code</a>
+        <a class="btn" href="https://github.com/mitanshukr/My-JavaScript30-Challenge/tree/main/${githubPath}" target="_blank">Project Code</a>
     </div>
 </div>`;
 
