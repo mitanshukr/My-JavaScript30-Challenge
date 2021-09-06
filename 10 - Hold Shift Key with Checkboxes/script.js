@@ -107,8 +107,8 @@ function eventCall() {
         if (checkbox.getAttribute('type') == 'checkbox')
             checkbox.addEventListener('click', checklistHandler);
     });
-    //We don't have an option to select input[type='checkbox'] using getElementByTagName.
-    //Hence, we used getElementByTagName('input), and later filtered out the checkbox type input.
+    //We don't have an option to select input[type='checkbox'] using getElementsByTagName.
+    //Hence, we used getElementsByTagName('input'), and later filtered out the checkbox type input.
     //Please let me know if you know the better way of doing it.
     //P.s: we could not use querySelector because we needed live sync of elements.
 }
